@@ -1,0 +1,10 @@
+@use '@/scss/abstracts/vars';
+
+.content {
+  margin: 2rem;
+  position: relative;
+  top: vars.$nav-height;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
