@@ -1,10 +1,39 @@
 @use '@/scss/abstracts/vars';
-
+// position and top set in navbar.scss
 .content {
   margin: 2rem;
-  position: relative;
-  top: vars.$nav-height;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.details {
+  $footer-height: 2rem;
+  $img-width-ratio: 0.6666; // this needs to be set based on class..?
+  // we need to know width/height ratios
+  $img-max-height: calc(100vh - #{vars.$nav-height} - #{$footer-height});
+  $img-max-width: calc(#{$img-max-height} * #{$img-width-ratio});
+  display: flex;
+  max-height: calc(100vh - #{vars.$nav-height});
+  height: 100%;
+
+  &__col-1 {
+    flex: 1 1 auto;
+    max-height: 100%;
+
+    // the maximum height of the image
+    // nav height, image height, footer height
+    .img-el {
+      max-height: $img-max-height;
+      max-width: $img-max-width;
+    }
+  }
+
+  &__image-footer {
+    height: $footer-height;
+  }
+
+  &__col-2 {
+    flex: 1 1 auto;
+  }
 }

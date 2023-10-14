@@ -84,7 +84,8 @@ module.exports = {
       }
     ],
     'react/prop-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn'
   },
   'settings': {
     'react': {

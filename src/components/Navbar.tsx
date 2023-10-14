@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './navbar.scss'
 
-export default function Navbar () {
-  const [ navIsOpen, setNavIsOpen ] = React.useState(false)
+interface Navbar {
+  setPage: (v: number) => void;
+}
+
+export default function Navbar ({ setPage }: Navbar) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  // const [page, setPage] = useState(0)
 
   const navDrawerClass = [
     'nav__drawer',
@@ -24,7 +29,18 @@ export default function Navbar () {
 
       </div>
       <div className={navDrawerClass}>
-        nav drawer
+        <div
+          className="nav__link"
+          onClick={() => setPage(0)}
+        >
+          Link 1
+        </div>
+        <div
+          className="nav__link"
+          onClick={() => setPage(1)}
+        >
+          Link 2
+        </div>
       </div>
     </nav>
   )
